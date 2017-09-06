@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibrarySestem.DAL.Interfaces
 {
-    interface IGenericRepo<T> where T:class
+    public interface IGenericRepo<T> where T:class
     {
         void Add(T item);
 

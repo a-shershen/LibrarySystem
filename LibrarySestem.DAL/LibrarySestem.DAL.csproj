@@ -61,6 +61,7 @@
     <Compile Include="Repositories\ReaderBookRepo.cs" />
     <Compile Include="Repositories\ReaderRepo.cs" />
     <Compile Include="Repositories\UserRepo.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace LibrarySestem.DAL.Interfaces
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
         IGenericRepo<Models.Book> Books { get; }
         IGenericRepo<Models.Reader> Readers { get; }
         IReaderBookInfo ReaderBooks { get; }
         IGenericRepo<Models.User> Users { get; }
+        void Save();
     }
 }

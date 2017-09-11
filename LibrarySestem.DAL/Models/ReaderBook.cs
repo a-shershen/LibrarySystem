@@ -18,7 +18,7 @@ namespace LibrarySestem.DAL.Models
 
         public DateTime TakeTime { get; set; }
 
-        public DateTime BackTime { get; set; }
+        public DateTime? BackTime { get; set; }
 
         public bool IsReturned { get; set; }
 

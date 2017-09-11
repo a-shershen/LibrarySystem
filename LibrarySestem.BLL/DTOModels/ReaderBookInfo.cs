@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibrarySestem.DAL.ExtendedModels
+namespace LibrarySestem.BLL.DTOModels
 {
     public class ReaderBookInfo
     {

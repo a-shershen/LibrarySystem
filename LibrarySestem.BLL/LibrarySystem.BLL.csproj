@@ -63,9 +63,9 @@
     <Compile Include="Services\SearchService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LibrarySestem.DAL\LibrarySestem.DAL.csproj">
+    <ProjectReference Include="..\LibrarySestem.DAL\LibrarySystem.DAL.csproj">
       <Project>{0224a368-371a-422f-929c-fcfdc159a3ba}</Project>
-      <Name>LibrarySestem.DAL</Name>
+      <Name>LibrarySystem.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

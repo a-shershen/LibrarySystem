@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySestem.WEB", "LibrarySestem.WEB\LibrarySestem.WEB.csproj", "{6709573E-1107-4AF4-B989-0D602C18018A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.WEB", "LibrarySestem.WEB\LibrarySystem.WEB.csproj", "{6709573E-1107-4AF4-B989-0D602C18018A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySestem.DAL", "LibrarySestem.DAL\LibrarySestem.DAL.csproj", "{0224A368-371A-422F-929C-FCFDC159A3BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.DAL", "LibrarySestem.DAL\LibrarySystem.DAL.csproj", "{0224A368-371A-422F-929C-FCFDC159A3BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySestem.BLL", "LibrarySestem.BLL\LibrarySestem.BLL.csproj", "{D8C836A8-6A78-4F71-A2D1-D1046B35021D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarySystem.BLL", "LibrarySestem.BLL\LibrarySystem.BLL.csproj", "{D8C836A8-6A78-4F71-A2D1-D1046B35021D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,6 +14,8 @@ namespace LibrarySestem.BLL.Interfaces
 
         void UpdateBook(DTOModels.BookDTO book);
 
-        void DeleteBoo(int bookId);
+        void DeleteBook(int bookId);
+
+        IEnumerable<DTOModels.BookDTO> GetAllBooks();
     }
 }

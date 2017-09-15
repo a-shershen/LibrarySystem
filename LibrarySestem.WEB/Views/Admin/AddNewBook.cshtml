@@ -1,0 +1,23 @@
+﻿@model LibrarySestem.WEB.Models.AddBookModel
+
+@using (Ajax.BeginForm("AddNewBook", new AjaxOptions
+{
+    HttpMethod = "post",
+    InsertionMode=InsertionMode.Replace,
+    UpdateTargetId = "booksPanel"
+}))
+{
+    @Html.LabelFor(m=>m.Title, "Название:")
+    @Html.TextBoxFor(m=>m.Title)
+    <br />
+
+    @Html.LabelFor(m=>m.Author, "Автор:")
+    @Html.TextBoxFor(m=>m.Author)
+    <br/>
+
+    @Html.LabelFor(m=>m.Year, "Год:")
+    @Html.TextBoxFor(m=>m.Year)
+    <br/>
+
+    <input type="submit" />
+}

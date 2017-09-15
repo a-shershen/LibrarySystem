@@ -1,0 +1,32 @@
+﻿@model IEnumerable<LibrarySestem.WEB.Models.Reader>
+
+@{
+    if (Model != null && Model.Count() != 0)
+    {
+
+        foreach (var reader in Model)
+        {
+            @reader.Id
+            <br />
+
+            @reader.FirstName
+            <br />
+
+            @reader.LastName
+            <br />
+
+            @reader.BirthDate
+            <br />
+
+            <br />
+
+        }
+    }
+    else
+    {
+        @:Список читателей пуст
+    }
+}
+
+
+

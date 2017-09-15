@@ -1,0 +1,25 @@
+﻿@model LibrarySestem.WEB.Models.AddNewReader
+
+@using (@Ajax.BeginForm("AddNewReader", new AjaxOptions
+{
+    HttpMethod = "Post",
+    UpdateTargetId = "readersPanel",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+    @Html.LabelFor(m=>m.FirstName, "Имя:")
+    @Html.TextBoxFor(m=>m.FirstName)
+    <br />
+
+    @Html.LabelFor(m => m.LastName, "Фамилия:")
+    @Html.TextBoxFor(m => m.LastName)
+    <br />
+
+    @Html.LabelFor(m => m.BirthDate, "Дата рождения (YYYY-MM-DD:")
+    @Html.TextBoxFor(m => m.BirthDate)
+    <br />
+
+    <input type="submit" />
+
+}
+

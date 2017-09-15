@@ -126,7 +126,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\ToBllModel.cs" />
+    <Compile Include="Mappers\ToViewMapper.cs" />
+    <Compile Include="Models\AddBookModel.cs" />
+    <Compile Include="Models\AddNewReader.cs" />
+    <Compile Include="Models\BookViewModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\Reader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +143,12 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Admin\BooksPanel.cshtml" />
+    <Content Include="Views\Admin\ShowBooks.cshtml" />
+    <Content Include="Views\Admin\AddNewBook.cshtml" />
+    <Content Include="Views\Admin\ReadersPanel.cshtml" />
+    <Content Include="Views\Admin\ShowReaders.cshtml" />
+    <Content Include="Views\Admin\AddNewReader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,16 @@
+﻿
+@Ajax.ActionLink("Все читатели", "ShowReaders", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "readersPanel"
+})
+
+@Ajax.ActionLink("Добавить читателя", "AddNewReader", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "readersPanel"
+})
+
+<div id="readersPanel">
+
+</div>

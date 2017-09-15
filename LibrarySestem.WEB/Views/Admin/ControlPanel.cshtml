@@ -7,6 +7,22 @@
 <h2>ControlPanel</h2>
 
 <div id="controlPanel">
-    
+    @Ajax.ActionLink("Книги", "BooksPanel",
+    new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "panel"
+    })
+
+    @Ajax.ActionLink("Читатели", "ReadersPanel",
+    new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "panel"
+    })
+
+    <div id="panel">
+
+    </div>
 
 </div>

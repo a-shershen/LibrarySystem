@@ -1,0 +1,15 @@
+﻿
+@Ajax.ActionLink("Все книги", "ShowBooks", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "booksPanel"
+})
+
+@Ajax.ActionLink("Добавить книгу", "AddNewBook", new AjaxOptions {
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId= "booksPanel"
+})
+
+<div id="booksPanel">
+
+</div>

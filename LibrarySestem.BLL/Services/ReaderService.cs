@@ -40,5 +40,10 @@ namespace LibrarySestem.BLL.Services
             db.Readers.Update(reader.ToDal());
             db.Save();
         }
+
+        public IEnumerable<DTOModels.ReaderDTO> GetAll()
+        {
+            return db.Readers.GetAll().ToDto();
+        }
     }
 }

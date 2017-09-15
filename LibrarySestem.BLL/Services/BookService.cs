@@ -24,7 +24,7 @@ namespace LibrarySestem.BLL.Services
             db.Save();
         }
 
-        public void DeleteBoo(int bookId)
+        public void DeleteBook(int bookId)
         {
             db.Books.Delete(b => b.Id == bookId);
             db.Save();
@@ -39,6 +39,11 @@ namespace LibrarySestem.BLL.Services
         {
             db.Books.Update(book.ToDal());
             db.Save();
+        }
+
+        public IEnumerable<DTOModels.BookDTO> GetAllBooks()
+        {
+            return db.Books.GetAll().ToDto();
         }
     }
 }

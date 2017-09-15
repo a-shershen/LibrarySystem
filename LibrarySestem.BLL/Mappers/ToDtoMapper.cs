@@ -71,5 +71,17 @@ namespace LibrarySestem.BLL.Mappers
 
             return resultList.AsEnumerable();
         }
+
+        public static IEnumerable<DTOModels.ReaderDTO> ToDto(this IEnumerable<DAL.Models.Reader> readers)
+        {
+            List<DTOModels.ReaderDTO> dtoReaders = new List<DTOModels.ReaderDTO>();
+
+            foreach(var r in readers)
+            {
+                dtoReaders.Add(r.ToDto());
+            }
+
+            return dtoReaders.AsEnumerable();
+        }
     }
 }

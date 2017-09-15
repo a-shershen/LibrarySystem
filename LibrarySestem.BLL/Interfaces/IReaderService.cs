@@ -15,5 +15,7 @@ namespace LibrarySestem.BLL.Interfaces
         void UpdateReader(DTOModels.ReaderDTO reader);
 
         void DeleteReader(int readerId);
+
+        IEnumerable<DTOModels.ReaderDTO> GetAll();
     }
 }

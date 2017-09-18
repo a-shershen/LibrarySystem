@@ -10,7 +10,7 @@ namespace LibrarySestem.BLL.Interfaces
     {
         void GiveBookForUser(int userId, int bookId);
 
-        void ReturnBook(int UserId, int bookId);
+        void ReturnBook(int recordId);
 
         IEnumerable<DTOModels.ReaderBookInfo> GetAllBooks();
 
@@ -19,5 +19,7 @@ namespace LibrarySestem.BLL.Interfaces
         IEnumerable<DTOModels.ReaderBookInfo> GetAllNotReturnedUserBooks();
 
         IEnumerable<DTOModels.ReaderBookInfo> GetAllNotReturnedUserBooks(int userId);
+
+        IEnumerable<DTOModels.BookDTO> GetAllAvailableBooks();
     }
 }

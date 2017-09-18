@@ -1,0 +1,28 @@
+﻿@model IEnumerable<LibrarySestem.WEB.Models.LibraryRecord>
+
+@{ 
+    if(Model!=null && Model.Count()!=0)
+    {
+        foreach(var record in Model)
+        {
+            @record.Title
+
+            @record.Author
+
+            @record.TakeTime
+
+            if(record.IsReturned)
+            {
+                @record.BackTime
+            }
+            else
+            {
+                @: "Книга на руках" 
+            }
+        }
+    }
+    else
+    {
+        @: У читателя нет книг
+    }
+}

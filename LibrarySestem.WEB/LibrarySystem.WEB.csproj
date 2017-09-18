@@ -131,6 +131,7 @@
     <Compile Include="Models\AddBookModel.cs" />
     <Compile Include="Models\AddNewReader.cs" />
     <Compile Include="Models\BookViewModel.cs" />
+    <Compile Include="Models\LibraryRecord.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Reader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +150,11 @@
     <Content Include="Views\Admin\ReadersPanel.cshtml" />
     <Content Include="Views\Admin\ShowReaders.cshtml" />
     <Content Include="Views\Admin\AddNewReader.cshtml" />
+    <Content Include="Views\Admin\LibraryPanel.cshtml" />
+    <Content Include="Views\Admin\ShowLibrary.cshtml" />
+    <Content Include="Views\Admin\ShowReaderRecord.cshtml" />
+    <Content Include="Views\Admin\ShowReaderBooks.cshtml" />
+    <Content Include="Views\Admin\GiveBookForUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

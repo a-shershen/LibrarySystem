@@ -29,6 +29,25 @@ namespace LibrarySestem.WEB.Mappers
             };
         }
 
+        public static Models.LibraryRecord ToView(this BLL.DTOModels.ReaderBookInfo info)
+        {
+            return new Models.LibraryRecord
+            {
+                Id = info.Id,
+                Author = info.Author,
+                BackTime = info.BackTime,
+                BirthDate = info.BirthDate,
+                BookId = info.BookId,
+                FirstName = info.FirstName,
+                IsReturned = info.IsReturned,
+                LastName = info.LastName,
+                ReaderId = info.ReaderId,
+                TakeTime = info.TakeTime,
+                Title = info.Title,
+                Year = info.Year
+            };
+        }
+
         public static IEnumerable<Models.BookViewModel> ToView(this IEnumerable<BLL.DTOModels.BookDTO> books)
         {
             List<Models.BookViewModel> viewBooks = new List<Models.BookViewModel>();
@@ -51,6 +70,18 @@ namespace LibrarySestem.WEB.Mappers
             }
 
             return viewReaders.AsEnumerable();
+        }
+
+        public static IEnumerable<Models.LibraryRecord> ToView(this IEnumerable<BLL.DTOModels.ReaderBookInfo> infos)
+        {
+            List<Models.LibraryRecord> records = new List<Models.LibraryRecord>();
+
+            foreach(var i in infos)
+            {
+                records.Add(i.ToView());
+            }
+
+            return records.AsEnumerable();
         }
     }
 }

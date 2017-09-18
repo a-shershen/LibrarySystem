@@ -125,6 +125,72 @@ namespace LibrarySestem.WEB.Controllers
                 return null;
             }
         }
+
+        public ActionResult LibraryPanel()
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public ActionResult ShowLibrary()
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("ShowLibrary", libService.GetAllBooks().ToView());
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public ActionResult ShowReaderRecord()
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("ShowReaderRecord", readerService.GetAll().ToView());
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        [HttpGet]
+        public ActionResult ShowReaderBooks(int id)
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("ShowReaderBooks", libService.GetAllUserBooks(id).ToView());
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public ActionResult ShowNotReturnedReaderBooks(int id)
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("ShowReaderBooks", libService.GetAllNotReturnedUserBooks(id).ToView());
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public ActionResult GiveBookForUser()
+        {
+            return PartialView();
+        }
     }
 
 }

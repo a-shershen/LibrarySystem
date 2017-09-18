@@ -1,0 +1,67 @@
+﻿@model IEnumerable<LibrarySestem.WEB.Models.Reader>
+
+@{ 
+    if (Model != null && Model.Count() != 0)
+    {
+        List<SelectListItem> items = new List<SelectListItem>();
+
+        foreach (var reader in Model)
+        {
+            items.Add(new SelectListItem { Text = reader.FirstName + reader.LastName, Value = reader.Id.ToString() });
+        }
+
+        items[0].Selected = true;
+
+        @Html.DropDownList("readers", items, new { id = "readers" })
+
+        <input type="checkbox" id="returnCheck" checked="checked"/>
+        <label for="returnCheck">Показать только невозвращённые</label>
+
+        @Ajax.ActionLink("Дать книгу", "GiveBookForUser", new AjaxOptions
+       {
+           InsertionMode = InsertionMode.Replace,
+           UpdateTargetId = "readerBooksPanel"
+       })
+
+
+        <div id="readerBooksPanel">
+
+        </div>
+
+        <script>      
+
+            $(document).ready(function () {
+                if ($("#returnCheck").is(":checked")) {
+                    $("#readerBooksPanel").load("/Admin/ShowNotReturnedReaderBooks/" + $("#readers").val());
+                }
+                else {
+                    $("#readerBooksPanel").load("/Admin/ShowReaderBooks/" + $("#readers").val());
+                }
+            });
+
+            $("#readers").change(function () {
+                if ($("#returnCheck").is(":checked")) {
+                    $("#readerBooksPanel").load("/Admin/ShowNotReturnedReaderBooks/" + $("#readers").val());
+                }
+                else {
+                    $("#readerBooksPanel").load("/Admin/ShowReaderBooks/" + $("#readers").val());
+                }
+            });
+
+            $("#returnCheck").change(function () {
+                if ($("#returnCheck").is(":checked")) {
+                    $("#readerBooksPanel").load("/Admin/ShowNotReturnedReaderBooks/" + $("#readers").val());
+                }
+                else {
+                    $("#readerBooksPanel").load("/Admin/ShowReaderBooks/" + $("#readers").val());
+                }
+            });
+        </script>
+    }
+
+    else
+    {
+        @: Читателей ещё нет
+    }
+
+}

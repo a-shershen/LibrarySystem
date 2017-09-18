@@ -1,0 +1,19 @@
+﻿
+@Ajax.ActionLink("Все выданные книги", "ShowLibrary", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "libraryPanel"
+})
+
+@Ajax.ActionLink("Карточка читателя", "ShowReaderRecord", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "libraryPanel"
+})
+
+
+
+<div id="libraryPanel">
+
+</div>
+

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<LibrarySestem.WEB.Models.LibraryRecord>
+
+@{ 
+    if(Model != null && Model.Count() != 0)
+    {
+        foreach(var rec in Model)
+        {
+            @rec.Id
+
+            @rec.ReaderId
+
+            @rec.FirstName
+
+            @rec.LastName
+
+            @rec.BirthDate
+
+            @rec.BookId
+
+            @rec.Title
+
+            @rec.Author
+
+            @rec.TakeTime
+        }
+    }
+
+    else
+    {
+        @: Книги ещё не выданы
+    }
+}

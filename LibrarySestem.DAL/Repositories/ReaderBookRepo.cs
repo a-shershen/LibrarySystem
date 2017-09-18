@@ -54,22 +54,22 @@ namespace LibrarySestem.DAL.Repositories
         {
             if (predicate != null)
             {
-                return db.Books.Join(db.ReaderBooks.Where(predicate), b => b.Id, rb => rb.BookId, (b, rb) => new { b, rb })
-                    .Join(db.Readers, brb => brb.rb.ReaderId, r => r.Id,
-                    (brb, r) => new ReaderBookInfo
+                return db.ReaderBooks.Where(predicate).Join(db.Books, rb => rb.BookId, b => b.Id, (rb, b) => new { rb, b })
+                    .Join(db.Readers, rbb => rbb.rb.ReaderId, r => r.Id,
+                    (rbb, r) => new ReaderBookInfo
                     {
-                        Id = brb.rb.Id,
-                        Author = brb.b.Author,
-                        BackTime = brb.rb.BackTime,
+                        Id = rbb.rb.Id,
+                        Author = rbb.b.Author,
+                        BackTime = rbb.rb.BackTime,
                         BirthDate = r.BirthDate,
-                        BookId = brb.b.Id,
+                        BookId = rbb.b.Id,
                         FirstName = r.FirstName,
-                        IsReturned = brb.rb.IsReturned,
+                        IsReturned = rbb.rb.IsReturned,
                         LastName = r.LastName,
                         ReaderId = r.Id,
-                        TakeTime = brb.rb.TakeTime,
-                        Title = brb.b.Title,
-                        Year = brb.b.Year
+                        TakeTime = rbb.rb.TakeTime,
+                        Title = rbb.b.Title,
+                        Year = rbb.b.Year
                     });
             }
 

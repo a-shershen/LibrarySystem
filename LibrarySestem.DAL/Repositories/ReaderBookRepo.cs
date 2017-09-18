@@ -98,6 +98,7 @@ namespace LibrarySestem.DAL.Repositories
         public void Update(ReaderBook item)
         {
             db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }

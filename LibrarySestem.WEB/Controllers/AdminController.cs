@@ -187,10 +187,31 @@ namespace LibrarySestem.WEB.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult GiveBookForUser()
         {
-            return PartialView();
+            return PartialView("GiveBookForUser", libService.GetAllAvailableBooks().ToView());
         }
+
+        [HttpPost]
+        public ActionResult GiveBookForUser(int readerId, int bookId)
+        {
+            libService.GiveBookForUser(readerId, bookId);
+
+            return PartialView("ShowReaderRecord", readerService.GetAll().ToView());
+        }
+
+        [HttpPost]
+        public ActionResult TakeBookBack(int id)
+        {
+            libService.ReturnBook(id);
+
+            return PartialView("ShowReaderRecord", readerService.GetAll().ToView());
+        }
+
+
+
+
     }
 
 }

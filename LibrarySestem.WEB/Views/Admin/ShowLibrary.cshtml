@@ -22,7 +22,20 @@
             @rec.Author
 
             @rec.TakeTime
+
+            if(!rec.IsReturned)
+            {
+                @: книга на руках
+            }
+            else
+            {
+                @rec.BackTime
+            }
+
+            <br />
         }
+
+
     }
 
     else

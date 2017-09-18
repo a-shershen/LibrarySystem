@@ -1,1 +1,39 @@
-﻿
+﻿@model IEnumerable<LibrarySestem.WEB.Models.BookViewModel>
+
+
+
+@{
+    if (Model != null && Model.Count() != 0)
+    {
+
+        <script>
+            function giveBook() {
+                var selectedReader = $("#readers").val();
+                var selectedBook = $("#booksList").val();
+                
+                $.post("/Admin/GiveBookForUser/", { readerId: selectedReader, bookId: selectedBook },
+                    function (data) { $("#libraryPanel").html(data); });
+            }
+        </script>
+
+        List<SelectListItem> items = new List<SelectListItem>();
+
+        foreach (var item in Model)
+        {
+            items.Add(new SelectListItem { Text = item.Author + item.Title + item.Year, Value = item.Id.ToString() });
+        }
+
+        items[0].Selected = true;
+
+        @Html.DropDownList("booksList", items, new { id = "booksList" })
+
+        <input type="button" id="giveBookButton" value="OK" onclick="giveBook()" />
+
+
+    }
+
+        else
+        {
+        @: Нет доступных книг
+    }
+}

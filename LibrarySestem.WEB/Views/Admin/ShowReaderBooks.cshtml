@@ -17,8 +17,17 @@
             }
             else
             {
-                @: "Книга на руках" 
+                @: Книга на руках 
+
+                @Ajax.ActionLink("Принять книгу", "TakeBookBack/" + record.Id, new AjaxOptions
+           {
+               HttpMethod = "Post",
+               InsertionMode = InsertionMode.Replace,
+               UpdateTargetId = "libraryPanel"
+           })
             }
+
+            <br />
         }
     }
     else

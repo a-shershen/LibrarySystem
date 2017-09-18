@@ -42,7 +42,7 @@ namespace LibrarySestem.BLL.Services
         {
             var book = db.Books.Get(b => b.Id == bookId);
 
-            var user = db.Users.Get(u => u.Id == userId);
+            var user = db.Readers.Get(u => u.Id == userId);
 
             if(book!=null && user != null)
             {
@@ -56,12 +56,14 @@ namespace LibrarySestem.BLL.Services
                         TakeTime = DateTime.Now
                     }
                     );
+
+                db.Save();
             }
         }
 
-        public void ReturnBook(int UserId, int bookId)
+        public void ReturnBook(int recordId)
         {
-            var record = db.ReaderBooks.Get(rb => rb.ReaderId == UserId && rb.BookId == bookId);
+            var record = db.ReaderBooks.Get(rb => rb.Id == recordId);
 
             if (record != null)
             {
@@ -70,6 +72,29 @@ namespace LibrarySestem.BLL.Services
 
                 db.ReaderBooks.Update(record);
             }
+        }
+
+        public IEnumerable<DTOModels.BookDTO> GetAllAvailableBooks()
+        {
+            var allIds = db.Books.GetAll().Select(b => new { Id = b.Id });
+
+            var notAvailableIds = db.ReaderBooks.GetAll(rb => rb.IsReturned == false).Select(rb => new { Id = rb.BookId });
+
+            var availableIds = allIds.Except(notAvailableIds);           
+
+            List<DTOModels.BookDTO> books = new List<DTOModels.BookDTO>();
+
+            foreach(var a in availableIds.ToList())
+            {
+                var book = db.Books.Get(b => b.Id == a.Id);
+
+                if(book!=null)
+                {
+                    books.Add(book.ToDto());
+                }
+            }
+
+            return books.OrderBy(b => b.Title).OrderBy(b => b.Author).AsEnumerable();           
         }
     }
 }

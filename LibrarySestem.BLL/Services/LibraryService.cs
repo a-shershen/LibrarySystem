@@ -23,6 +23,11 @@ namespace LibrarySestem.BLL.Services
             return db.ReaderBooks.GetAllInfo().ToDto();
         }
 
+        public IEnumerable<ReaderBookInfo> GetAllNotReturnedUserBooks()
+        {
+            return db.ReaderBooks.GetAllInfo(rb => rb.IsReturned == false).OrderBy(o=>o.TakeTime).ToDto();
+        }
+
         public IEnumerable<ReaderBookInfo> GetAllNotReturnedUserBooks(int userId)
         {
             return db.ReaderBooks.GetAllInfo(rb => rb.ReaderId == userId && rb.IsReturned == false).ToDto();

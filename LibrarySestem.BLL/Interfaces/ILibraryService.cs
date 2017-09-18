@@ -16,6 +16,8 @@ namespace LibrarySestem.BLL.Interfaces
 
         IEnumerable<DTOModels.ReaderBookInfo> GetAllUserBooks(int userId);
 
+        IEnumerable<DTOModels.ReaderBookInfo> GetAllNotReturnedUserBooks();
+
         IEnumerable<DTOModels.ReaderBookInfo> GetAllNotReturnedUserBooks(int userId);
     }
 }

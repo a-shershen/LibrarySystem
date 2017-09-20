@@ -1,37 +1,45 @@
 ﻿@model IEnumerable<LibrarySestem.WEB.Models.LibraryRecord>
 
-@{ 
-    if(Model!=null && Model.Count()!=0)
+@{
+    if (Model != null && Model.Count() != 0)
     {
-        foreach(var record in Model)
-        {
-            @record.Title
-
-            @record.Author
-
-            @record.TakeTime
-
-            if(record.IsReturned)
+        <div class="divLine">
+            @foreach (var record in Model)
             {
-                @record.BackTime
-            }
-            else
-            {
-                @: Книга на руках 
+                <div>
+                    <div class="inline-block width200">
+                        @record.Title
+                    </div>
 
-                @Ajax.ActionLink("Принять книгу", "TakeBookBack/" + record.Id, new AjaxOptions
-           {
-               HttpMethod = "Post",
-               InsertionMode = InsertionMode.Replace,
-               UpdateTargetId = "libraryPanel"
-           })
-            }
+                    <div class="inline-block width200">
+                        @record.Author
+                    </div>
+                    <div class="inline-block width100">
+                        @record.TakeTime
+                    </div>
 
-            <br />
-        }
+                    <div class="inline-block width100">
+                        @if (record.IsReturned)
+                        {
+                            @record.BackTime
+                        }
+                        else
+                        {
+                            @Ajax.ActionLink("Принять книгу", "TakeBookBack/" + record.Id, new AjaxOptions
+                           {
+                               HttpMethod = "Post",
+                               InsertionMode = InsertionMode.Replace,
+                               UpdateTargetId = "libraryPanel"
+                           })
+                        }
+
+                    </div>
+                </div>
+            }
+        </div>
     }
     else
     {
-        @: У читателя нет книг
+         @: У читателя нет книг
     }
 }

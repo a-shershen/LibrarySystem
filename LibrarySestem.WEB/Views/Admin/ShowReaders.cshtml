@@ -3,24 +3,25 @@
 @{
     if (Model != null && Model.Count() != 0)
     {
+        <div class="divLine">
+            @foreach (var reader in Model)
+            {
+                <div>
 
-        foreach (var reader in Model)
-        {
-            @reader.Id
-            <br />
+                    <div class="inline-block width50">
+                        @reader.Id
+                    </div>
 
-            @reader.FirstName
-            <br />
+                    <div class="inline-block width200">
+                        @reader.FirstName @reader.LastName
+                    </div>
 
-            @reader.LastName
-            <br />
-
-            @reader.BirthDate
-            <br />
-
-            <br />
-
-        }
+                    <div class="inline-block width100">
+                        @reader.BirthDate.ToShortDateString()
+                    </div>
+                </div>
+            }
+        </div>
     }
     else
     {

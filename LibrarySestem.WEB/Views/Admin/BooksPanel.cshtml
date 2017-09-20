@@ -1,14 +1,19 @@
 ﻿
-@Ajax.ActionLink("Все книги", "ShowBooks", new AjaxOptions
+<menuitem class="submenu">
+    @Ajax.ActionLink("Все книги", "ShowBooks", new AjaxOptions
 {
     InsertionMode = InsertionMode.Replace,
     UpdateTargetId = "booksPanel"
 })
+</menuitem>
 
-@Ajax.ActionLink("Добавить книгу", "AddNewBook", new AjaxOptions {
+<menuitem class="submenu">
+    @Ajax.ActionLink("Добавить книгу", "AddNewBook", new AjaxOptions
+{
     InsertionMode = InsertionMode.Replace,
-    UpdateTargetId= "booksPanel"
+    UpdateTargetId = "booksPanel"
 })
+</menuitem>
 
 <div id="booksPanel">
 

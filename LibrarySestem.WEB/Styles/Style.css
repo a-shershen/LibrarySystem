@@ -1,0 +1,73 @@
+﻿*{
+    margin:0;
+}
+
+body {
+    font-family:"Open Sans", sans-serif;
+    background-color:#F0F0F0;
+    font-size:small;
+}
+
+div{
+    vertical-align:top;
+}
+
+.base
+{
+    width:900px;
+    margin: auto;
+    padding:50px;
+    background-color:#FFFFFF;
+}
+
+h2{
+    font-size:large;
+    font-weight:800;
+    color:#303030;
+}
+
+
+menu{
+    all:unset;
+}
+
+menuitem.mainmenu
+{
+    
+}
+
+menuitem.mainmenu a{
+    text-decoration:none;
+    color: #3030FF;
+    font-size:large;
+}
+
+menuitem.submenu {
+
+}
+
+menuitem.submenu a {
+    text-decoration: none;
+    color: #3030FF;
+    font-size: small;
+}
+
+.inline-block{
+    display:inline-block;
+}
+
+.width50{
+    width:50px;
+}
+
+.width100 {
+    width: 100px;
+}
+
+.width200 {
+    width: 200px;
+}
+
+.divLine :hover {
+    background-color: #F0F0F0;
+}

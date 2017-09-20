@@ -1,15 +1,18 @@
-﻿
-@Ajax.ActionLink("Все выданные книги", "ShowLibrary", new AjaxOptions
+﻿<menuitem class="submenu">
+    @Ajax.ActionLink("Все выданные книги", "ShowLibrary", new AjaxOptions
 {
     InsertionMode = InsertionMode.Replace,
     UpdateTargetId = "libraryPanel"
 })
+</menuitem>
 
-@Ajax.ActionLink("Карточка читателя", "ShowReaderRecord", new AjaxOptions
+<menuitem class="submenu">
+    @Ajax.ActionLink("Карточка читателя", "ShowReaderRecord", new AjaxOptions
 {
     InsertionMode = InsertionMode.Replace,
     UpdateTargetId = "libraryPanel"
 })
+</menuitem>
 
 
 

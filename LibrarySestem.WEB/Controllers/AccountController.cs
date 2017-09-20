@@ -28,7 +28,7 @@ namespace LibrarySestem.WEB.Controllers
             {
                 if (accountService.IsPasswordTrue(model.Login, model.Password))
                 {
-                    System.Web.Security.FormsAuthentication.SetAuthCookie(model.Login, false);
+                    System.Web.Security.FormsAuthentication.SetAuthCookie(model.Login, true);
 
                     return RedirectToAction("ControlPanel", "Admin");
                 }

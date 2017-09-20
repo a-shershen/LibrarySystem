@@ -11,7 +11,7 @@ namespace LibrarySestem.WEB.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("ControlPanel", "Admin");
         }
     }
 }

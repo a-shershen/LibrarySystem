@@ -4,26 +4,34 @@
     if (Model != null && Model.Count() != 0)
     {
 
-        foreach (var book in Model)
-        {
-                @book.Id
-                <br />
+        <div class="divLine">
+            @foreach (var book in Model)
+            {
+                <div>
 
-                @book.Author
-                <br />
+                    <div class="inline-block width50">
+                        @book.Id
+                    </div>
 
-                @book.Title
-                <br />
+                    <div class="inline-block width200">
+                        @book.Author
+                    </div>
 
-                @book.Year
-                <br />
+                    <div class="inline-block width200">
+                        @book.Title
+                    </div>
 
-                <br /><br />
-        }
+                    <div class="inline-block width50">
+                        @book.Year
+                    </div>
+
+                </div>
+            }
+        </div>
     }
     else
     {
-            @:Книг ещё нет
-    }
-}
+                @:Книг ещё нет
+                }
+                }
 

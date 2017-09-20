@@ -1,39 +1,59 @@
 ﻿@model IEnumerable<LibrarySestem.WEB.Models.LibraryRecord>
 
-@{ 
-    if(Model != null && Model.Count() != 0)
+@{
+    if (Model != null && Model.Count() != 0)
     {
-        foreach(var rec in Model)
-        {
-            @rec.Id
-
-            @rec.ReaderId
-
-            @rec.FirstName
-
-            @rec.LastName
-
-            @rec.BirthDate
-
-            @rec.BookId
-
-            @rec.Title
-
-            @rec.Author
-
-            @rec.TakeTime
-
-            if(!rec.IsReturned)
+        <div class="divLine">
+            @foreach (var rec in Model)
             {
-                @: книга на руках
-            }
-            else
-            {
-                @rec.BackTime
-            }
+                <div>
+                <div class="inline-block width50">
+                    @rec.Id
+                </div>
 
-            <br />
-        }
+                @*<div class="inline-block width50">
+                    @rec.ReaderId
+                </div>*@
+
+                <div class="inline-block width200">
+                    @rec.FirstName @rec.LastName
+                </div>
+
+                <div class="inline-block width100">
+                    @rec.BirthDate.ToShortDateString()
+                </div>
+
+                @*<div class="inline-block width50">
+                    @rec.BookId
+                </div>*@
+
+                <div class="inline-block width200">
+                    @rec.Title
+                </div>
+
+                <div class="inline-block width100">
+                    @rec.Author
+                </div>
+
+                <div class="inline-block width100">
+                    @rec.TakeTime
+                </div>
+
+                <div class="inline-block width100">
+                    @if(!rec.IsReturned)
+                    {
+                        @: книга на руках
+                    }
+                    else
+                    {
+                        @rec.BackTime
+                    }
+                </div>
+
+
+            </div>
+            }
+        </div>
 
 
     }

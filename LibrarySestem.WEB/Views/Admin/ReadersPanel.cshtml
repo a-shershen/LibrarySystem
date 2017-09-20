@@ -1,16 +1,21 @@
 ﻿
-@Ajax.ActionLink("Все читатели", "ShowReaders", new AjaxOptions
+<menuitem class="submenu">
+    @Ajax.ActionLink("Все читатели", "ShowReaders", new AjaxOptions
 {
     InsertionMode = InsertionMode.Replace,
     UpdateTargetId = "readersPanel"
 })
+</menuitem>
+    
 
-@Ajax.ActionLink("Добавить читателя", "AddNewReader", new AjaxOptions
-{
-    InsertionMode = InsertionMode.Replace,
-    UpdateTargetId = "readersPanel"
-})
+    <menuitem class="submenu">
+    @Ajax.ActionLink("Добавить читателя", "AddNewReader", new AjaxOptions
+   {
+       InsertionMode = InsertionMode.Replace,
+       UpdateTargetId = "readersPanel"
+   })
+</menuitem>
 
-<div id="readersPanel">
+        <div id="readersPanel">
 
-</div>
+        </div>

@@ -4,29 +4,37 @@
     Layout = "~/Views/_AdminLayout.cshtml";
 }
 
-<h2>ControlPanel</h2>
+<h2>Панель управления</h2>
 
 <div id="controlPanel">
-    @Ajax.ActionLink("Книги", "BooksPanel",
+    <menu>
+        <menuitem class="mainmenu">
+            @Ajax.ActionLink("Книги", "BooksPanel",
     new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
         UpdateTargetId = "panel"
     })
+        </menuitem>
 
-    @Ajax.ActionLink("Читатели", "ReadersPanel",
+        <menuitem class="mainmenu">
+            @Ajax.ActionLink("Читатели", "ReadersPanel",
     new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
         UpdateTargetId = "panel"
     })
+        </menuitem>
 
-    @Ajax.ActionLink("Библиотека", "LibraryPanel",
+        <menuitem class="mainmenu">
+            @Ajax.ActionLink("Библиотека", "LibraryPanel",
     new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
         UpdateTargetId = "panel"
     })
+        </menuitem>
+</menu>
 
     <div id="panel">
 
